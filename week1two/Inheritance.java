@@ -1,0 +1,28 @@
+package week1two;
+
+class A1{
+	protected int x =100;
+	protected void disp() {
+	}
+}
+class B1 extends A1{
+	//private int x = 200;
+	public int x = 200;
+	public int y = 100;
+	public void disp() { // Overriding
+		System.out.println("A1 클래스의 x =" + super.x);
+		System.out.println("B1 클래스의 y =" + this.x);
+	}
+	public void disp2() {}
+}
+public class Inheritance {
+	public static void main(String[] args) {
+		B1 bp = new B1();
+		System.out.println(bp.x); // 200
+		bp.disp();
+		
+		A1 ap = new B1();
+		System.out.println(ap.x); // 100
+		ap.disp();
+	}
+}
